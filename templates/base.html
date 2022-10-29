@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mohamed Abo elgheit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header"  dir="rtl" lang="ar">
+					<h1 id="logo"><a href="{% url 'home' %}">الرئيسية</a></h1>
+					<nav id="nav">
+						<ul>
+							<li>
+								<a href="{% url 'article_list' %}">مقالات وتغطيات</a>
+								<ul>
+									<li><a href="{% url 'article_list' %}">مقالات</a></li>
+									<li><a href="{% url 'article_list' %}">تغطيات</a></li>
+								</ul>
+							</li>
+							<li><a href="#">تحقيقات</a></li>
+							<li><a href="#">مواقع التواصل</a></li>
+							<li><a href="#">بودكاست</a></li>
+							<li><a href="#">أفلام وثائقية</a></li>
+							<li><a href="#">مقابلات</a></li>
+							<li><a href="#">من أنا</a></li>
+						</ul>
+					</nav>
+				</header>
+			{% block content %}
+			{% endblock %}
+			<!-- Footer -->
+				<footer id="footer">
+					<header class="major">
+						<h3>تواصل معنا</h3>
+						<!-- <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p> -->
+					</header>					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

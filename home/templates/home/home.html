@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+            <h2>محمد أبوالغيط</h2>
+            <p>طبيب وكاتب مصري متخصص في اشياء واشياء اخرى</p>
+        </header>
+        <span class="image"><img src="{% static 'images/profile mohamed.jpg' %}" alt="" /></span>
+    </div>
+    <a href="#one" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- One -->
+<section id="one"  dir="rtl" lang="ar">
+    <!-- <span class="image fit main"><img src="{% static 'images/journals.jpg' %}" alt="" /></span> -->
+    <div class="content">
+        <div class="container" style="padding: 0 2em 0 2em !important;">
+            <div class="row">
+                <h2 class="col-12">
+                    أحدث المقالات
+                </h2>
+            </br>
+                    {% for article in articles %}
+                        <div class="col-6 col-12-medium">
+                                <a class="box alt image fit" href="{% url 'article_detail' article.id %}" class="image featured"><img width="200" height="400" src="{{ article.image.url }}" alt="" /></a>
+                                <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
+                                <p>{{ article.snippet }}..<a href="{% url 'article_detail' article.id %}">اقرأ المزيد</a></p>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <a href="#two" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="spotlight style2 right" dir="rtl">
+    <span class="image fit main"><img src="{% static 'images/artworks.jpg' %}" alt="" /></span>
+    <div class="content">
+        <header>
+            <h2>بودكاست 11</h2>
+            <p>
+                ‎نأتيكم بالمناقشات الحرة، والأفكار الطازجة. نحلل الواقع ونسعى للتنبؤ بآمال المستقبل. نحاول إفادتكم وتسليتكم.
+                ‎يقدمه الصحفي محمد أبوالغيط</p>
+        </header>
+        <p>في الموسم الأول من "بودكاست ١١" نحيي الذكرى العاشرة للثورة المصرية والربيع العربي، ونطرح الأسئلة التي تدور في الأذهان. ماذا حدث؟ ولماذا حدث؟ وماذا يمكن أن يحدث؟ في سلسلة حوارات يقدمها الصحفي محمد أبوالغيط مع:
+            (بالترتيب الأبجدي) إلهام عيداروس – ناشطة بمجال حقوق المرأة والمواطنة، ووكيلة مؤسسي حزب العيش والحرية آية حجازي – ناشطة نسوية، ومديرة مؤسسة بلادي جزيرة للإنسانية بلال فضل – إعلامي وكاتب وسينارست خالد فهمي – أستاذ التاريخ الحديث بجامعة كامبريدج شادي لويس – باحث وروائي ومختص بعلم النفس            </p>
+            <ul class="actions">
+                <li><a href="#" class="button">اقرأ المزيد</a></li>
+            </ul>
+    </div>
+    <a href="#three" class="goto-next scrolly">Next</a>
+</section>
+			<!-- Three -->
+            <section id="three" class="spotlight style3 left" dir="rtl">
+                <span class="image fit main"><img src="{% static 'images/hqdefault.jpg' %}" alt="" /></span>
+                <div class="content">
+                    <header>
+                        <h2>المستخدم الأخير</h2>
+                        <p>فيلم وثائقي يتناول احداث حرب اليمن</p>
+                    </header>
+                    <p>في الثانية من صباح يوم 26 مارس 2015 تحول ليل العاصمة اليمنية صنعاء إلى نهار ليعلن بداية عملية "عاصفة الحزم"، ومعها بدأت الانتقادات الدولية لسقوط مدنيين بسبب القصف الجوي الذي يستخدم طائرات وقذائف تصدرها دولٌ غربية.
+            
+                        إلا أن جانباً آخر من الصورة لم ينل نفس القدر من الاهتمام، وهو منح كميات هائلة من الأسلحة والمدرعات الغربية إلى المقاتلين اليمنيين، رغم مخالفة ذلك لاتفاقيات بيع الأسلحة الثنائية، فضلاً عن قوانين محلية ومعاهدات اقليمية ودولية، كلها شملت بنوداً واضحة لالتزام "المستخدم الأخير" الذي يمنع نقل السلاح لأي طرف ثالث دون موافقة مكتوبة من دولة التصدير.
+                        </p>
+                    <ul class="actions">
+                        <li><a href="#" class="button">اقرأ المزيد</a></li>
+                    </ul>
+                </div>
+                <a href="#four" class="goto-next scrolly">Next</a>
+            </section>
+
+			<!-- Four -->
+            <section id="four" class="wrapper style1 special fade-up">
+                <div class="container">
+                    <header class="major">
+                        <h2>الوسوم الأكثر قراءة</h2>
+                        <!-- <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p> -->
+                    </header>
+                    <div class="box alt">
+                        <div class="row gtr-uniform">
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-chart-area"></span> -->
+                                <h3><a href="#">اليمن</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-comment"></span> -->
+                                <h3><a href="#">ثورة</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-flask"></span> -->
+                                <h3><a href="#">استقصاء</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-paper-plane"></span> -->
+                                <h3><a href="#">فساد</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-file"></span> -->
+                                <h3><a href="#">صلاح</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-lock"></span> -->
+                                <h3><a href="#">سوريا</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-chart-area"></span> -->
+                                <h3><a href="#">العراق</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-comment"></span> -->
+                                <h3><a href="#">جيبوتي</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-flask"></span> -->
+                                <h3><a href="#">حمادة</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-paper-plane"></span> -->
+                                <h3><a href="#">سعاد</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-file"></span> -->
+                                <h3><a href="#">ألمانيا</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                            <section class="col-2 col-4-medium col-6-xsmall">
+                                <!-- <span class="icon solid alt major fa-lock"></span> -->
+                                <h3><a href="#">أسيوط</a></h3>
+                                <!-- <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p> -->
+                            </section>
+                        </div>
+                    </div>
+                    <footer class="major">
+                        <!-- <input type="text" class="form-control" data-date-end-date="0d" name="haha"> -->
+                        <header class="major">
+                            <h2>الأرشيف</h2>
+                            <!-- <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p> -->
+                        </header>
+                        <div class="row">
+                        <select id="archives-dropdown-3 col-12" name="archive-dropdown">
+
+			
+                            <option value="" dir="rtl"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;اختر شهر
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;</option>
+                                <option value="https://khaledfahmy.org/ar/2022/09/"> سبتمبر 2022 </option>
+                    <option value="#"> يوليو 2022 </option>
+                    <option value="#"> يونيو 2022 </option>
+                    <option value="#"> أبريل 2022 </option>
+                    <option value="#"> مارس 2022 </option>
+                    <option value="#"> فبراير 2022 </option>
+                    <option value="#"> أكتوبر 2021 </option>
+                    <option value="#"> يوليو 2021 </option>
+                    <option value="#"> يونيو 2021 </option>
+                    <option value="#"> مايو 2021 </option>
+                    <option value="#"> أبريل 2021 </option>
+                    <option value="#"> فبراير 2021 </option>
+                    <option value="#"> يناير 2021 </option>
+                    <option value="#"> أكتوبر 2020 </option>
+                    <option value="#"> يوليو 2020 </option>
+                    <option value="#"> يونيو 2020 </option>
+                    <option value="#"> فبراير 2020 </option>
+                    <option value="#"> ديسمبر 2019 </option>
+                    <option value="#"> نوفمبر 2019 </option>
+                    <option value="#"> يوليو 2019 </option>
+                    <option value="#"> أبريل 2019 </option>
+                    <option value="#"> مارس 2019 </option>
+                    <option value="#"> ديسمبر 2018 </option>
+                    <option value="#"> نوفمبر 2018 </option>
+                    <option value="#"> أكتوبر 2018 </option>
+                    <option value="#"> سبتمبر 2018 </option>
+                    <option value="#"> يونيو 2018 </option>
+                    <option value="#"> أبريل 2018 </option>
+                    <option value="#"> يناير 2018 </option>
+                    <option value="#"> ديسمبر 2017 </option>
+                    <option value="#"> أكتوبر 2017 </option>
+                    <option value="#"> سبتمبر 2017 </option>
+                    <option value="#"> يوليو 2017 </option>
+                    <option value="#"> يونيو 2017 </option>
+                    <option value="#"> مايو 2017 </option>
+                    <option value="#"> أبريل 2017 </option>
+                    <option value="#"> فبراير 2017 </option>
+                    <option value="#"> يناير 2017 </option>
+                    <option value="#"> ديسمبر 2016 </option>
+                    <option value="#"> نوفمبر 2016 </option>
+                    <option value="#"> أكتوبر 2016 </option>
+                    <option value="#"> سبتمبر 2016 </option>
+                    <option value="#"> أغسطس 2016 </option>
+                    <option value="#"> يوليو 2016 </option>
+                    <option value="#"> يونيو 2016 </option>
+                    <option value="#"> مايو 2016 </option>
+                    <option value="#"> أبريل 2016 </option>
+                    <option value="#"> مارس 2016 </option>
+                    <option value="#"> فبراير 2016 </option>
+                    <option value="#"> يناير 2016 </option>
+                    <option value="#"> ديسمبر 2015 </option>
+                    <option value="#"> نوفمبر 2015 </option>
+                    <option value="#"> أكتوبر 2015 </option>
+                    <option value="#"> سبتمبر 2015 </option>
+                    <option value="#"> أغسطس 2015 </option>
+                    <option value="#"> يوليو 2015 </option>
+                    <option value="#"> يونيو 2015 </option>
+                    <option value="#"> مايو 2015 </option>
+                    <option value="#"> أبريل 2015 </option>
+                    <option value="#"> مارس 2015 </option>
+                    <option value="#"> فبراير 2015 </option>
+                    <option value="#"> يناير 2015 </option>
+                    <option value="#"> ديسمبر 2014 </option>
+                    <option value="#"> نوفمبر 2014 </option>
+                    <option value="#"> سبتمبر 2014 </option>
+                    <option value="#"> أغسطس 2014 </option>
+                    <option value="#"> يوليو 2014 </option>
+                    <option value="#"> يونيو 2014 </option>
+                    <option value="#"> مايو 2014 </option>
+                    <option value="#"> أبريل 2014 </option>
+                    <option value="#"> مارس 2014 </option>
+                    <option value="#"> فبراير 2014 </option>
+                    <option value="#"> يناير 2014 </option>
+                    <option value="#"> ديسمبر 2013 </option>
+                    <option value="#"> سبتمبر 2013 </option>
+                    <option value="#"> أغسطس 2013 </option>
+                    <option value="#"> يوليو 2013 </option>
+                    <option value="#"> يونيو 2013 </option>
+                    <option value="#"> مايو 2013 </option>
+                    <option value="#"> أبريل 2013 </option>
+                    <option value="#"> مارس 2013 </option>
+                    <option value="#"> فبراير 2013 </option>
+                    <option value="#"> يناير 2013 </option>
+                    <option value="#"> ديسمبر 2012 </option>
+                    <option value="#"> نوفمبر 2012 </option>
+                    <option value="#"> أكتوبر 2012 </option>
+                    <option value="#"> سبتمبر 2012 </option>
+                    <option value="#"> أغسطس 2012 </option>
+                    <option value="#"> يوليو 2012 </option>
+                    <option value="#"> يونيو 2012 </option>
+                    <option value="#"> مايو 2012 </option>
+                    <option value="#"> أبريل 2012 </option>
+                    <option value="#"> مارس 2012 </option>
+                    <option value="#"> فبراير 2012 </option>
+                    <option value="#"> يناير 2012 </option>
+                    <option value="#"> ديسمبر 2011 </option>
+                    <option value="#"> نوفمبر 2011 </option>
+                    <option value="#"> أكتوبر 2011 </option>
+                    <option value="#"> سبتمبر 2011 </option>
+                    <option value="#"> أغسطس 2011 </option>
+                    <option value="#"> يوليو 2011 </option>
+                    <option value="#"> يونيو 2011 </option>
+                    <option value="#"> مايو 2011 </option>
+                    <option value="#"> مارس 2011 </option>
+                    <option value="#"> يناير 2011 </option>
+                    <option value="#"> ديسمبر 2010 </option>
+                    <option value="#"> نوفمبر 2010 </option>
+                    <option value="#"> أكتوبر 2010 </option>
+                    <option value="#"> يونيو 2010 </option>
+                    <option value="#"> مايو 2010 </option>
+                    <option value="#"> أبريل 2010 </option>
+                    <option value="#"> يوليو 2008 </option>
+                    <option value="#"> يونيو 2008 </option>
+                    <option value="#"> مايو 2008 </option>
+                    <option value="#"> أبريل 2008 </option>
+                    <option value="#"> أكتوبر 2007 </option>
+                    <option value="#"> مايو 2007 </option>
+                    <option value="#"> أغسطس 2006 </option>
+                    <option value="#"> يوليو 2006 </option>
+                    <option value="#"> يناير 2006 </option>
+                
+                        </select>
+                        </div>
+                        <!-- <ul class="actions special">
+                            <li><a href="#footer" class="button">Magna sed feugiat</a></li>
+                        </ul> -->
+                    </footer>
+                </div>
+            </section>
+{% endblock %}
