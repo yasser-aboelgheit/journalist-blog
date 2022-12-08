@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainSection, FirstSection, SecondSection
+from .models import MainSection, FirstSection, SecondSection, Tags
 from solo.admin import SingletonModelAdmin
 
 class MainSectionAdmin(SingletonModelAdmin):
@@ -16,3 +16,6 @@ class SecondSectionAdmin(SingletonModelAdmin):
 admin.site.register(MainSection, MainSectionAdmin)
 admin.site.register(FirstSection, FirstSectionAdmin)
 admin.site.register(SecondSection, SecondSectionAdmin)
+
+
+admin.site.register(Tags)

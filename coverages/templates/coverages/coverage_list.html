@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Main -->
+	<div id="main" class="wrapper style1" dir="rtl" lang="ar">
+		<div class="container">
+			<header class="major">
+				<h2>التغطيات الصحفية</h2>
+			</header>
+
+			{% for coverage in object_list %}
+				<section>
+					<h3><a href="{% url 'coverage_detail' coverage.id %}">{{coverage.title}}</a></h3>
+						{% if coverage.image %}
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-12-xsmall"><span class="image fit"><img src="{{ coverage.image.url }}" alt="" /></span></div>
+								</div>
+							</div>
+						{% endif %}
+					<p>{{coverage.snippet}}..<a href="{% url 'coverage_detail' coverage.id %}"> اقرأ المزيد</a></p>
+					<hr />
+				</section>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

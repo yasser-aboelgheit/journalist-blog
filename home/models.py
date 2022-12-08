@@ -18,3 +18,9 @@ class SecondSection(SingletonModel):
     second_section_title = models.CharField(null=True, blank=True, max_length=255)
     second_section_subtitle_title = models.CharField(null=True, blank=True, max_length=255)
     second_section_first_paragraph = models.TextField(null=True, blank=True)
+
+class Tags(models.Model):
+    tag = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+

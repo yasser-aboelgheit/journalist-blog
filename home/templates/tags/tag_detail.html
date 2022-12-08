@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Main -->
+
+<div id="main" class="wrapper style1" dir="rtl" lang="ar">
+    <div class="container">
+        <header class="major">
+            <h><a href="#"> {{ tag.tag }}</a></h>
+            {% for tag in object.tag.all %}
+            <h><a href="{% url 'tag_detail' tag.id %}"> {{ tag.tag }}</a></h>
+            {% endfor%}
+
+            
+        </header>
+    </div>
+</div>
+
+
+<section id="one"  dir="rtl" lang="ar">
+    <div class="content">
+        <div class="container" style="padding: 0 2em 0 2em !important;">
+            <div class="row">
+                <!-- Section -->
+                <section>
+                    
+                    <form action="#" enctype="multipart/form-data" method="post">
+                        <input type="text" name= "tag_pk" value= "{{tag.id}}" > 
+                        {% csrf_token %}
+                    </form>
+                </section>
+            </br>
+                {% for article in object_list %}
+                    <div class="col-6 col-12-medium">
+                            <a class="box alt image fit" href="{% url 'article_detail' article.id %}" class="image featured"><img width="200" height="400" src="{{ article.image.url }}" alt="" /></a>
+                            <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
+                            <p>{{ article.snippet }}..<a href="{% url 'article_detail' article.id %}">اقرأ المزيد</a></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
