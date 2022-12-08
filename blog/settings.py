@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     
     'home',
     'articles',
+    'coverages',
+    'investigations',
 ]
 
 MIDDLEWARE = [
