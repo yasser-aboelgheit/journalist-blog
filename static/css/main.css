@@ -83,7 +83,8 @@ input, select, textarea {
 	}
 
 	html, body {
-		background: #1c1d26;
+		background: #efeff1;
+		color: black;
 	}
 
 	body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -98,7 +99,7 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.75);
+		/* color: rgba(255, 255, 255, 0.75); */
 		font-family: "Roboto", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 100;
@@ -134,14 +135,14 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		/* color: #ffffff; */
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
+			color: black;
 			border: 0;
 		}
 
@@ -2186,7 +2187,7 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: #160207;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -3384,6 +3385,7 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 100;
+		color: black;
 	}
 
 		#header h1 {
@@ -3451,11 +3453,14 @@ input, select, textarea {
 
 	#banner {
 		background-attachment: fixed;
-		background-color: #272833;
-		background-image: url("{% static 'css/images/banner.jpg'  %}");
-		background-position: center center;
+		background-image:url("/static/images/Colored.jpg");
+		/* background-color: #646edc; */
+		/* background-image:url("/static/img/sample.jpeg")
+		 url("images/mohamed2.jpg"); */
+		/* url("https://scontent-lhr8-1.xx.fbcdn.net/v/t1.15752-9/318282539_3522461641368050_3641449651176655403_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=87UH3QM2FzQAX8hSUu4&_nc_ht=scontent-lhr8-1.xx&oh=03_AdQ6VgUdcnxF6a-X7NIMt7AAYlUcBVc_6z0wMkyELRFMJA&oe=63BB24E7"); */
+		background-position: center;
 		background-size: cover;
-		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+		box-shadow: 0 .25em 0.5em 0 rgba(0, 0, 0, 0.894);
 		min-height: 100vh;
 		position: relative;
 		text-align: center;
@@ -3472,7 +3477,7 @@ input, select, textarea {
 
 		#banner:after {
 			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
-			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
+			/* background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");; */
 			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			content: '';
@@ -3837,6 +3842,7 @@ input, select, textarea {
 			#banner {
 				box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
 				min-height: calc(100vh - 44px);
+				background-image: url("/static/images/Mobile copy.jpg");
 			}
 
 				#banner:before {

@@ -21,16 +21,22 @@
 					<h1 id="logo"><a href="{% url 'home' %}">الرئيسية</a></h1>
 					<nav id="nav">
 						<ul>
-							<li>
+							<li dir="rtl" lang="ar">
 								<a href="{% url 'article_list' %}">مقالات وتغطيات</a>
 								<ul>
-									<li><a href="{% url 'article_list' %}">مقالات</a></li>
-									<li><a href="{% url 'article_list' %}">تغطيات</a></li>
+									<li dir="rtl" lang="ar"><a href="{% url 'article_list' %}">مقالات</a></li>
+									<li dir="rtl" lang="ar"><a href="{% url 'article_list' %}">تغطيات</a></li>
 								</ul>
 							</li>
-							<li><a href="#">تحقيقات</a></li>
-							<li><a href="#">مواقع التواصل</a></li>
-							<li><a href="#">بودكاست</a></li>
+							<li>
+								<a href="{% url 'article_list' %}">تحقيقات</a>
+								<ul>
+									<li><a href="{% url 'article_list' %}">مكتوبة</a></li>
+									<li><a href="{% url 'article_list' %}">فيديو</a></li>
+								</ul>
+							</li>
+							<li><a href="#">تدوينات حرة</a></li>
+							<li><a href="#">بودكاست 11</a></li>
 							<li><a href="#">أفلام وثائقية</a></li>
 							<li><a href="#">مقابلات</a></li>
 							<li><a href="#">من أنا</a></li>

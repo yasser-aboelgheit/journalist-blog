@@ -3333,6 +3333,7 @@ input, select, textarea {
 				display: block;
 				padding: 0.1em 1em;
 				text-decoration: none;
+				text-align: right;
 			}
 
 			.dropotron > li:first-child {
