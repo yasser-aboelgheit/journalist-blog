@@ -20,6 +20,6 @@ class TagDetailView(DetailView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.filter(tag=self.get_object())
-        # data['coverage'] = Coverage.objects.filter(tag=self.get_object())
-        # data['investigation'] = Coverage.objects.filter(tag=self.get_object())
+        data['coverages'] = Coverage.objects.filter(tag=self.get_object())
+        data['investigations'] = Investigation.objects.filter(tag=self.get_object())
         return data

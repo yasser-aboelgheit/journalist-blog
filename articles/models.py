@@ -8,7 +8,8 @@ class Article(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to="images/articles")
     snippet = models.TextField(null=True, blank=True)
     content = RichTextUploadingField()
-    tag = models.ManyToManyField(Tags, blank=False)
+    tag = models.ManyToManyField(Tags, blank=True)
+    published_at = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     # article_type = models.char
@@ -16,3 +17,7 @@ class Article(models.Model):
     @property
     def get_snippet(self):
         return self.snippet[:100]
+
+
+    class Meta:
+        ordering = ('published_at',)
