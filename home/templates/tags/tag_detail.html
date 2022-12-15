@@ -14,10 +14,10 @@
 <section id="one"  dir="rtl" lang="ar">
     <div class="content">
         <div class="container" style="padding: 0 2em 0 2em !important;">
+            <h3><a >المقالات:</a></h3>
             <div class="row">
-          
             </br>
-                {% for article in object_list %}
+                {% for article in articles %}
                     <div class="col-6 col-12-medium">
                             <a class="box alt image fit" href="{% url 'article_detail' article.id %}" class="image featured"><img width="200" height="400" src="{{ article.image.url }}" alt="" /></a>
                             <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
