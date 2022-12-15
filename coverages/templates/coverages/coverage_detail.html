@@ -18,12 +18,8 @@
                         {% endif %}
                     {{object.content|safe}}
                     <hr />
-                </section><section>
-                    <h1>روابط ذات صله:</h1>
-                    {% for tag in object.tag.all %}
-                    <h><a href="{% url 'tag_detail' tag.id %}"> {{ tag.tag }}</a></h>
-                    {% endfor%}
                 </section>
+                {% include 'tag.html' %}
 
         </div>
     </div>
