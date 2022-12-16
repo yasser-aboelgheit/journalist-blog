@@ -4,9 +4,9 @@
     <div id="main" class="wrapper style1" dir="rtl" lang="ar">
         <div class="container">
             <header class="major">
+                {% comment %} <h2>المقالات الصحفية</h2> {% endcomment %}
                 <h3>{{object.title}}</h3>
             </header>
-
                 <section>
                         {% if object.image %}
                             <div class="box alt">
@@ -19,6 +19,7 @@
                     {{object.content|safe}}
                     <hr />
                 </section>
+                {% include 'tag.html' %}
+            </div>
         </div>
-    </div>
-{% endblock %}
+        {% endblock %}
