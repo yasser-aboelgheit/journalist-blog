@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # DATABASES = {
@@ -171,16 +171,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Deployment
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dbdraft1',
-#         'USER': 'mysuperuser',
-#         'PASSWORD': 'mysuperuser',
-#         'HOST': 'dbdraft1.cpp6uiuew8wl.us-east-1.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbdraft1',
+        'USER': 'mysuperuser',
+        'PASSWORD': 'mysuperuser',
+        'HOST': 'dbdraft1.cpp6uiuew8wl.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 AWS_ACCESS_KEY_ID = 'AKIAY242ZRSKSLVVD57V '
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'bucketdraft2'
