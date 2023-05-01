@@ -12,6 +12,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.all()
+        data['tags'] = Tags.objects.all()
         return data
 class TagDetailView(DetailView):
     model = Tags
