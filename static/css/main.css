@@ -3983,6 +3983,7 @@ input, select, textarea {
 					height: 3em;
 					line-height: 3em;
 					text-decoration: none;
+					text-align: right;
 				}
 
 					#navPanel .link:hover {
