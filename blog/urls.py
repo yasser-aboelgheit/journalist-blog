@@ -11,6 +11,7 @@ urlpatterns = [
     path('articles/', include('articles.urls')),
     path('coverages/', include('coverages.urls')),
     path('investigations/', include('investigations.urls')),
+    path('documentaries/', include('documentaries.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
