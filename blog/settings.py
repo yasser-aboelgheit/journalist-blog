@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'articles',
     'coverages',
     'investigations',
+    'documentaries',
 ]
 
 MIDDLEWARE = [
