@@ -3,8 +3,7 @@ from articles.models import Article
 from coverages. models import Coverage
 from investigations.models import Investigation
 from .models import Tags
-# from flask import request
-
+from documentaries.models import Documentary
 
 class HomePageView(TemplateView):
     template_name = 'home/home.html'
@@ -13,6 +12,7 @@ class HomePageView(TemplateView):
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.all()
         data['tags'] = Tags.objects.all()
+        data["documentary_id"] = Documentary.objects.last().id
         return data
 class TagDetailView(DetailView):
     model = Tags

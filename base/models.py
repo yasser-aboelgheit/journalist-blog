@@ -27,3 +27,6 @@ class BaseModel(models.Model):
     published_on = models.ForeignKey(Publisher,
                                      null=True,
                                      blank=True, on_delete=models.deletion.DO_NOTHING)
+
+    def __str__(self):
+        return self.title if self.title else self.pk

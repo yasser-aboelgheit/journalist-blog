@@ -18,3 +18,6 @@ class Documentary(models.Model):
 
     class Meta:
         ordering = ('published_at',)
+
+    def __str__(self):
+        return self.title
