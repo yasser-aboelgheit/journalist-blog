@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+	tr:hover { 
+   background: #ffffff; 
+}
+td a { 
+   /* display: block;  */
+   /* border: 1px solid black; */
+   padding: 16px; 
+}
+</style>
+<!-- Main -->
+	<div id="main" class="wrapper style1" dir="rtl" lang="ar">
+		<div class="container">
+			<header class="major">
+				<h2>بودكاست 11</h2>
+			</header>
+
+
+
+
+									<!-- Table -->
+									<section>
+										<h3>الحلقات</h3>
+										<div class="table-wrapper">
+											<table>
+												<tbody>
+													<tr>
+														<td><a href="#">الحلقة الاولى</a></td>
+														<td><a href="#">حوار مع الدكتور عمرو حمزاوي</a></td>
+														<td><a href="#">1:01:00</a></td>
+													</tr>
+													<tr>
+														<td><a href="#">الحلقة الاولى</a></td>
+														<td><a href="#">حوار مع الدكتور عمرو حمزاوي</a></td>
+														<td><a href="#">1:01:00</a></td>
+													</tr>
+													<tr>
+														<td>Item 4</td>
+														<td>Vitae integer tempus condimentum.</td>
+														<td>19.99</td>
+													</tr>
+													<tr>
+														<td>Item 5</td>
+														<td>Ante turpis integer aliquet porttitor.</td>
+														<td>29.99</td>
+													</tr>
+												</tbody>
+												<tfoot>
+													<tr>
+														<td colspan="2"></td>
+														<td>100.00</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+			{% for investigation in object_list %}
+				<section>
+					<h3><a href="{% url 'investigation_detail' investigation.id %}">{{investigation.title}}</a></h3>
+						{% if investigation.image %}
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6 col-12-xsmall"><span class="image fit"><img src="{{ investigation.image.url }}" alt="" /></span></div>
+								</div>
+							</div>
+						{% endif %}
+					<p>{{investigation.snippet}}..<a href="{% url 'investigation_detail' investigation.id %}"> اقرأ المزيد</a></p>
+					<hr />
+				</section>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

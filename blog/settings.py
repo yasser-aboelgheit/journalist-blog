@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'documentaries',
     'base',
     'publisher',
+    'podcast',
 ]
 
 MIDDLEWARE = [
