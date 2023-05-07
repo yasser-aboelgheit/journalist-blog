@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'coverages',
     'investigations',
     'documentaries',
+    'base',
+    'publisher',
 ]
 
 MIDDLEWARE = [
@@ -88,18 +90,6 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dbdraft1',
-#         'USER': 'mysuperuser',
-#         'PASSWORD': 'mysuperuser',
-#         'HOST': 'dbdraft1.cpp6uiuew8wl.us-east-1.rds.amazonaws.com',
-#         'PORT': '5432',
 #     }
 # }
 
