@@ -9,8 +9,6 @@ class Investigation(BaseModel):
     image = models.ImageField(null=True, blank=True, upload_to="images/investigations")
     snippet = models.TextField(null=True, blank=True)
     content = RichTextUploadingField()
-    tag = models.ManyToManyField(Tags, blank=True)
-    published_at = models.DateField(null=True, blank=True)
 
     @property
     def get_snippet(self):

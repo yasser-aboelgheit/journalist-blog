@@ -1,10 +1,10 @@
-from abc import abstractmethod
 from datetime import datetime
-from uuid import UUID, uuid4
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from home.models import Tags
 from publisher.models import Publisher
+
 
 class BaseModel(models.Model):
     """
@@ -27,6 +27,8 @@ class BaseModel(models.Model):
     published_on = models.ForeignKey(Publisher,
                                      null=True,
                                      blank=True, on_delete=models.deletion.DO_NOTHING)
+    tag = models.ManyToManyField(Tags, blank=True)
+    published_at = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.title if self.title else self.pk
