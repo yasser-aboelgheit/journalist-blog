@@ -29,6 +29,8 @@ class BaseModel(models.Model):
                                      blank=True, on_delete=models.deletion.DO_NOTHING)
     tag = models.ManyToManyField(Tags, blank=True)
     published_at = models.DateField(null=True, blank=True)
+    source_link = models.URLField(null=True, blank=True)
+    number_of_visits = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title if self.title else self.pk
