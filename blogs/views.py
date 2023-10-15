@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 
 class BlogListView(ListView):
     model = Blog
-    template_name = 'blogs/blog_list.html'
+    template_name = 'blogs/blogs_list.html'
 
 class BlogDetialView(DetailView):
     model = Blog
