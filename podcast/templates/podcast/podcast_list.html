@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 <style>
 	tr:hover { 
@@ -36,25 +38,23 @@ td a {
 
 
 <div class="container">
-	{% for episode in object_list %}
-  <center class="row">
-	  <div class="col-12">
-		
-		  <a class="row clickable" 
-			 href="{% url 'podcast_detail' episode.pk %}">
-			  <div class="col-4">
-				  {{episode.title}} 
-			  </div>
-			  <div class="col-8">
-				{{episode.snippet}}
-			  </div>
-		  </a>
-	  </div>
-  </center>
-  {% endfor %}
+
+
+
+
+	<div class="box alt">
+		<div class="row gtr-50 gtr-uniform">
+			{% for episode in object_list %}
+			<div class="col-4 col-6-small" ><a href="{% url 'podcast_detail' episode.pk %}" style="text-align: center;"><span class="image fit"><img src="{{ episode.image.url }}" alt="" />{{episode.title}}</span></a></div>
+			{% endfor %}
+		</div>
+	</div>
+
+ 
 </div>
 
 </section>
+
 		</div>
 	</div>
 

@@ -7,9 +7,10 @@ class Podcast(BaseModel):
     episode_number = models.IntegerField()
     title = models.CharField(max_length=255)
     snippet = models.TextField()
-    youtube_link = models.URLField()
-    video = models.FileField()
+    video = models.FileField(null=True,blank=True)
     content = RichTextUploadingField()
+    image = models.ImageField(null=True, blank=True, upload_to="images/blogs")
+
 
     def __str__(self):
         return self.title
