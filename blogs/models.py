@@ -1,9 +1,8 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from home.models import Tags
 from base.models import BaseModel
 
-class Article(BaseModel):
+class Blog(BaseModel):
     title = models.CharField(max_length=255)
     image = models.ImageField(null=True, blank=True, upload_to="images/articles")
     snippet = models.TextField(null=True, blank=True)

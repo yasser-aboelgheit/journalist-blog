@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+			<!-- Main -->
+				<div id="main" class="wrapper style1" dir="rtl" lang="ar">
+					<div class="container">
+						<header class="major">
+							<h2>تدوينات</h2>
+						</header>
+
+						{% for article in object_list %}
+							<section>
+								<h3><a href="{% url 'article_detail' article.id %}">{{article.title}}</a></h3>
+									{% if article.image %}
+										<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6 col-12-xsmall"><span class="image fit"><img src="{{ article.image.url }}" alt="" /></span></div>
+											</div>
+										</div>
+									{% endif %}
+								<p>{{article.snippet}}..<a href="{% url 'article_detail' article.id %}"> اقرأ المزيد</a></p>
+								<hr />
+							</section>
+						{% endfor %}
+					</div>
+				</div>
+{% endblock %}

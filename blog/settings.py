@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'base',
     'publisher',
     'podcast',
+    'blogs'
 ]
 
 MIDDLEWARE = [
