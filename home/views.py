@@ -1,7 +1,5 @@
-from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, DetailView
 from articles.models import Article, ArticleTypeChoices
-from coverages. models import Coverage
-from investigations.models import Investigation
 from .models import Tags
 from documentaries.models import Documentary
 
@@ -21,6 +19,4 @@ class TagDetailView(DetailView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.filter(tag=self.get_object())
-        # data['coverages'] = Coverage.objects.filter(tag=self.get_object())
-        # data['investigations'] = Investigation.objects.filter(tag=self.get_object())
         return data
