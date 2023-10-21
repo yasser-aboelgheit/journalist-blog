@@ -1,13 +1,17 @@
-from .models import Blog
+from articles.models import Article, ArticleTypeChoices
 # Create your views here.
 from django.views.generic import ListView, DetailView
 
 class BlogListView(ListView):
-    model = Blog
+    model = Article
     template_name = 'blogs/blogs_list.html'
 
+    def get_queryset(self, **kwargs):
+       qs = super().get_queryset(**kwargs)
+       return qs.filter(type=ArticleTypeChoices.BLOG)
+
 class BlogDetialView(DetailView):
-    model = Blog
+    model = Article
     template_name = 'blogs/blog_detail.html'
 
     def dispatch(self, request, *args, **kwargs):

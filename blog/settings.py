@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'whitenoise.runserver_nostatic',
+    'django_extensions',
     
     'home',
     'articles',
