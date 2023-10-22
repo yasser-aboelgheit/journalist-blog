@@ -6,7 +6,6 @@ from articles.models import Article, ArticleTypeChoices
 from .models import Tags
 from documentaries.models import Documentary
 import calendar
-from translate import Translator
 from datetime import datetime
 
 
@@ -14,7 +13,6 @@ class HomePageView(TemplateView):
     template_name = 'home/home.html'
 
     def get_context_data(self, **kwargs):
-        translator = Translator(to_lang="Arabic")
         dates_list = []
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.filter(type=ArticleTypeChoices.ARTICLE)[:6]
