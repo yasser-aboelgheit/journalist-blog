@@ -37,14 +37,19 @@
 							<li><a href="{% url 'documentary_list' %}">أفلام وثائقية</a></li>
 							<!-- <li><a href="#">مقابلات</a></li> -->
 							<li><a href="#">من أنا</a></li>
+							{% comment %}<li>
+								<div class="search-container" style="display: block;">
+									<form action="{% url 'search_view' %}"  method="POST">
+										{% csrf_token %}
+									  <input type="text" placeholder="Search.." name="search" style="display: block;">
+									  <button type="submit" style="display: block;"><i class="fa fa-search" style="display: block;"></i></button>
+									</form>
+							</li>{% endcomment %}
 						</ul>
 					</nav>
 				</header>
 			{% block content %}
 			{% endblock %}
-
-
-			
 
 			<!-- Footer -->
 				<footer id="footer">

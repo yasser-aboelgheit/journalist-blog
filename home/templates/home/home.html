@@ -30,7 +30,7 @@
                         <div class="col-6 col-12-medium">
                                 <a class="box alt image fit" href="{% url 'article_detail' article.id %}" class="image featured"><img width="200" height="400" src="{{ article.image.url }}" alt="" /></a>
                                 <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
-                                <p>{{ article.snippet }}..<a href="{% url 'article_detail' article.id %}">اقرأ المزيد</a></p>
+                                <p>{{ article.get_snippet }}..<a href="{% url 'article_detail' article.id %}">اقرأ المزيد</a></p>
                         </div>
                     {% endfor %}
             </div>
@@ -94,21 +94,26 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <footer class="major">
-                        <!-- <input type="text" class="form-control" data-date-end-date="0d" name="haha"> -->
-          <!--                <header class="major">
+                    <footer class="major"  dir="rtl">
+                         <header class="major">
                             <h2>الأرشيف</h2>
                         </header>
-                        <div class="row">
-                        <select id="archives-dropdown-3 col-12" name="archive-dropdown">
 
-			
-                            <option value="" dir="rtl"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;اختر شهر
+                        <form method="post" action="{% url 'archive_view' %}">
+                            {% csrf_token %}
+                            
+       
+                        <select id="archives-dropdown-3 col-12" name="archive-dropdown" onchange="this.form.submit()">	
+                            <option value=""> 
+                            &nbsp;&nbsp; الارشيف
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;</option>
-                                <option value="https://khaledfahmy.org/ar/2022/09/"> سبتمبر 2022 </option>
-                    <option value="#"> يوليو 2022 </option>
-                    <option value="#"> يونيو 2022 </option>
+
+                    <!-- <option value="https://khaledfahmy.org/ar/2022/09/"> سبتمبر 2022 </option> -->
+                    {% for date in dates%}
+                    <option value="{{date}}"  dir="rtl"> {{date}}</option>
+                    {% endfor %}
+                    
+                    <!-- <option value="#"> يونيو 2022 </option>
                     <option value="#"> أبريل 2022 </option>
                     <option value="#"> مارس 2022 </option>
                     <option value="#"> فبراير 2022 </option>
@@ -225,10 +230,10 @@
                     <option value="#"> مايو 2007 </option>
                     <option value="#"> أغسطس 2006 </option>
                     <option value="#"> يوليو 2006 </option>
-                    <option value="#"> يناير 2006 </option>
+                    <option value="#"> يناير 2006 </option> -->
                 
                         </select>
-                        </div> -->
+                    </form>
                         <!-- <ul class="actions special">
                             <li><a href="#footer" class="button">Magna sed feugiat</a></li>
                         </ul> -->

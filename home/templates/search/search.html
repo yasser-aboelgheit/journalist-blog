@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Main -->
+
+<div id="main" class="wrapper style1" dir="rtl" lang="ar">
+    <div class="container">
+        <header class="major">
+            <h3><a >{{title}}</a></h3>
+        </header>
+    </div>
+</div>
+
+
+<section id="one"  dir="rtl" lang="ar">
+    <div class="content">
+        <div class="container" style="padding: 0 2em 0 2em !important;">
+        </br>
+        <div class="row">
+        {% if articles %}
+            {% for article in articles %}
+                <div class="col-6 col-12-medium">
+                    <a class="box alt image fit" href="{% url 'article_detail' article.id %}" class="image featured"><img width="200" height="400" src="{{ article.image.url }}" alt="" /></a>
+                    <h3><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h3>
+                    <p>{{ article.snippet }}..<a href="{% url 'article_detail' article.id %}">اقرأ المزيد</a></p>
+                </div>
+            {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</section>
+{% endblock %}
