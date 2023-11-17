@@ -23,7 +23,6 @@ class HomePageView(TemplateView):
         for i in dates: dates_list.append(f"{calendar.month_name[i.month]} {i.year}")
         # data["dates"] = dates_list
         data["dates"] = dates_list
-        print(dates_list)
         return data
 class TagDetailView(DetailView):
     model = Tags
