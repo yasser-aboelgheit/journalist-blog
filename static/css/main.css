@@ -1,7 +1,12 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Gulzar&display=swap');
 @font-face{
 	font-family: 'abuhijleh_font';
+	src: url("/static/webfonts/abuhijleh_font.ttf")
+}
+@font-face{
+	font-family: cairo;
 	src: url("/static/webfonts/abuhijleh_font.ttf")
 }
 /*
@@ -26,7 +31,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+	font-family: cairo;}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -3424,7 +3430,7 @@ input, select, textarea {
 						height: inherit;
 						line-height: inherit;
 						outline: 0;
-						font-family: 'Gulzar', serif;
+						font-family: cairo;
 					}
 
 						#header nav ul li a.button, #header nav ul li span.button {

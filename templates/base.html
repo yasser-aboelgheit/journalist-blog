@@ -10,6 +10,10 @@
 		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Gulzar&display=swap');
+			.special_text{
+				font-family: 'Gulzar', serif !important;
+				font-size: x-large;
+			}
 		  </style>
 		
 	</head>
@@ -17,29 +21,29 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header"  dir="rtl" lang="ar">
-					<h1 id="logo"><a href="{% url 'home' %}">الرئيسية</a></h1>
+				<header id="header"  dir="rtl" lang="ar" class="special_text">
+					<h1 id="logo"><a href="{% url 'home' %}" class="special_text">الرئيسية</a></h1>
 					<nav id="nav">
 						<ul>
 							<li dir="rtl" lang="ar">
-								<a href="#">مقالات وتغطيات</a>
+								<a href="#" class="special_text">مقالات وتغطيات</a>
 								<ul>
-									<li dir="rtl" lang="ar"><a href="{% url 'article_list' %}">مقالات</a></li>
-									<li dir="rtl" lang="ar"><a href="{% url 'coverage_list' %}">تغطيات</a></li>
+									<li dir="rtl" lang="ar"><a href="{% url 'article_list' %}" class="special_text">مقالات</a></li>
+									<li dir="rtl" lang="ar"><a href="{% url 'coverage_list' %}" class="special_text">تغطيات</a></li>
 								</ul>
 							</li>
 							<li>
-								<a href="#">تحقيقات</a>
+								<a href="#" class="special_text">تحقيقات</a>
 								<ul>
-									<li><a href="{% url 'investigation_list' %}">مكتوبة</a></li>
-									<li><a href="{% url 'investigation_list' %}">فيديو</a></li>
+									<li><a href="{% url 'investigation_list' %}" class="special_text">مكتوبة</a></li>
+									<li><a href="{% url 'investigation_list' %}" class="special_text">فيديو</a></li>
 								</ul>
 							</li>
-							<li><a href="{% url 'blog_list' %}">تدوينات حرة</a></li>
-							<li><a href="{% url 'podcast_list' %}">بودكاست 11</a></li>
-							<li><a href="{% url 'documentary_list' %}">أفلام وثائقية</a></li>
+							<li><a href="{% url 'blog_list' %}" class="special_text">تدوينات حرة</a></li>
+							<li><a href="{% url 'podcast_list' %}" class="special_text">بودكاست 11</a></li>
+							<li><a href="{% url 'documentary_list' %}" class="special_text">أفلام وثائقية</a></li>
 							<!-- <li><a href="#">مقابلات</a></li> -->
-							<li><a href="#">من أنا</a></li>
+							<li><a href="#" class="special_text">من أنا</a></li>
 							{% comment %}<li>
 								<div class="search-container" style="display: block;">
 									<form action="{% url 'search_view' %}"  method="POST">
