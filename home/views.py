@@ -1,10 +1,8 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, DetailView
 from articles.models import Article, ArticleTypeChoices
 from .models import Tags
-from documentaries.models import Documentary
 import calendar
 from datetime import datetime
 
@@ -15,7 +13,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         dates_list = []
         data = super().get_context_data(**kwargs)
-        data['articles'] = Article.objects.filter(type=ArticleTypeChoices.ARTICLE)[:6]
+        data['articles'] = Article.objects.filter(show_on_home_page=True)[:6]
         data['tags'] = Tags.objects.all()
         data["documentary_id"] = Article.objects.filter(type=ArticleTypeChoices.INVESTIGATION_VIDEO).first().id
         dates = list(Article.objects.all().values_list("published_at",flat=True))

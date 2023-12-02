@@ -20,6 +20,8 @@ class Article(BaseModel):
     image = models.ImageField(null=True, blank=True, upload_to="images/articles")
     snippet = models.TextField(null=True, blank=True)
     content = RichTextUploadingField()
+    show_on_home_page = models.BooleanField(default=False)
+
 
     @property
     def get_snippet(self):
