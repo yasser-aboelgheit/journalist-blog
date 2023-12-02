@@ -148,11 +148,13 @@ input, select, textarea {
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
+		font-weight: bold;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: black;
 			border: 0;
+			font-weight: bold;
 		}
 
 	h2 {

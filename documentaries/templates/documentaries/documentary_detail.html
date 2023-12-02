@@ -8,14 +8,7 @@
             </header>
 
                 <section>
-                        {% if object.image %}
-                            <div class="box alt">
-                                <div class="row gtr-50 gtr-uniform">
-                                    <div class="col-6 col-12-xsmall"><span class="image fit"><img src="{{ object.image.url }}" alt="" /></span></div>
-                                </div>
-                            </div>
-                            
-                        {% endif %}
+                    <iframe width="100%" height="400" src="{{object.source_link}}" title="الفلم الوثائفي &quot;المستخدم الأخير&quot; | السلطة5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     {{object.content|safe}}
                     <hr />
                 </section>

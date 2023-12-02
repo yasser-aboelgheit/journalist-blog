@@ -8,6 +8,8 @@ class ArticleTypeChoices(models.TextChoices):
     COVERAGE = 1, "تغطية"
     BLOG = 2, "تدوينة حرة"
     INVESTIGATION = 3, "تحقيق"
+    DOCUMENTRY = 4, "وثائقي"
+
 class Article(BaseModel):
     
     title = models.CharField(max_length=255)

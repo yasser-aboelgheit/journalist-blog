@@ -1,26 +1,55 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
+<style>
+	tr:hover { 
+   background: #ffffff; 
+}
+td a { 
+   /* display: block;  */
+   /* border: 1px solid black; */
+   padding: 16px; 
+}
+</style>
 <!-- Main -->
 	<div id="main" class="wrapper style1" dir="rtl" lang="ar">
 		<div class="container">
 			<header class="major">
-				<h2>الافلام الوثائقية</h2>
+				<h2>بودكاست 11</h2>
 			</header>
+<section>
+	<link rel="stylesheet" 
+	href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src=
+"https://code.jquery.com/jquery-3.2.1.slim.min.js">
+</script>
+<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+</script>
+<title>Table Row Clickable</title>
 
-			{% for documentary in object_list %}
-				<section>
-					<h3><a href="{% url 'documentary_detail' documentary.id %}">{{documentary.title}}</a></h3>
-						{% if documentary.image %}
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-6 col-12-xsmall"><span class="image fit"><img src="{{ documentary.image.url }}" alt="" /></span></div>
-								</div>
-							</div>
-						{% endif %}
-					<p>{{documentary.snippet}}..<a href="{% url 'documentary_detail' documentary.id %}"> اقرأ المزيد</a></p>
-					<hr />
-				</section>
+<style>
+  .clickable {
+	  height: 40px;
+  }
+</style>
+
+
+<div class="container">
+
+		<div class="row">
+			{% for object in object_list %}
+			<div class="col-lg-4 col-12-small" ><a href="{% url 'documentary_detail' object.pk %}" style="text-align: center;"><span class="image fit"><img src="{{ object.image.url }}" alt="" />{{object.title}}</span></a></div>
 			{% endfor %}
 		</div>
+
+</div>
+
+</section>
+
+		</div>
 	</div>
+
 {% endblock %}
