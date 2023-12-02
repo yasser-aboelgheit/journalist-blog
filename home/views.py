@@ -17,7 +17,7 @@ class HomePageView(TemplateView):
         data = super().get_context_data(**kwargs)
         data['articles'] = Article.objects.filter(type=ArticleTypeChoices.ARTICLE)[:6]
         data['tags'] = Tags.objects.all()
-        data["documentary_id"] = Documentary.objects.last().id
+        data["documentary_id"] = Article.objects.filter(type=ArticleTypeChoices.INVESTIGATION_VIDEO).first().id
         dates = list(Article.objects.all().values_list("published_at",flat=True))
         
         for i in dates: dates_list.append(f"{calendar.month_name[i.month]} {i.year}")

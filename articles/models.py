@@ -7,8 +7,9 @@ class ArticleTypeChoices(models.TextChoices):
     ARTICLE = 0, "مقالة"
     COVERAGE = 1, "تغطية"
     BLOG = 2, "تدوينة حرة"
-    INVESTIGATION = 3, "تحقيق"
+    INVESTIGATION_WRITTEN = 3, "تحقيق مكتوب"
     DOCUMENTRY = 4, "وثائقي"
+    INVESTIGATION_VIDEO = 5, "تحقيق فيديو"
 
 class Article(BaseModel):
     
