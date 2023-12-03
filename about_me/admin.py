@@ -1,3 +1,4 @@
 from django.contrib import admin
+from about_me.models import AboutMePage
 
-# Register your models here.
+admin.site.register(AboutMePage)
