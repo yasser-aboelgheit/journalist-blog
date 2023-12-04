@@ -81,7 +81,7 @@
 				</section>
 
 			<!-- Four -->
-				<section id="four" class="wrapper style1 special fade-up" style="color:white">
+				<section id="four" class="wrapper style1 special fade-up" style="color:white;background-color:#1c1d26">
 					<div class="container">
 						<header class="major">
 							<h2>الجوائز</h2>
@@ -91,7 +91,10 @@
 							<div class="row">
 								{% for prize in prizes %}
 								<div class="col-4 col-6-medium col-12-xsmall">
-									<span class="image fit"><img src="{{prize.image.url}}"/></span>
+									<span class="image fit" style="height:100px;width:100px;display:block;
+									margin-left: auto;
+									margin-right: auto;
+									"><img src="{{prize.image.url}}"/></span>
 									<h3>{{ prize.title }}</h3>
 									<p>{{ prize.snippet }}</p>
 								</div>
