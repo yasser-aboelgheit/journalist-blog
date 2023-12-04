@@ -76,8 +76,23 @@
                 <a href="#four" class="goto-next scrolly">Next</a>
             </section>
 
+            <section id="five" class="wrapper style2 special fade">
+                <div class="container">
+                    <header>
+                        <h2البحث</h2>
+                    </header>
+                    <form method="post" action="{% url 'search_view' %}" class="cta" dir="rtl">
+                        {% csrf_token %}
+                        <div class="row gtr-uniform gtr-50">
+                            <div class="col-8 col-12-xsmall"><input type="text" name="search" id="email" placeholder="البحث.." /></div>
+                            <div class="col-4 col-12-xsmall"><input type="submit" value="بحث" class="fit primary" /></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
 			<!-- Four -->
-            <section id="four" class="wrapper style1 special fade-up">
+{% comment %}            <section id="four" class="wrapper style1 special fade-up">
                 <div class="container">
                     <header class="major">
                         <h2>الوسوم الأكثر قراءة</h2>
@@ -94,6 +109,7 @@
                             {% endfor %}
                         </div>
                     </div>
+                    {% endcomment %}
                     <footer class="major"  dir="rtl">
                          <header class="major">
                             <h2>الأرشيف</h2>
@@ -240,4 +256,5 @@
                     </footer>
                 </div>
             </section>
+            
 {% endblock %}
