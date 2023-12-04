@@ -18,8 +18,11 @@ class HomePageView(TemplateView):
         data["documentary_id"] = Article.objects.filter(type=ArticleTypeChoices.INVESTIGATION_VIDEO).first().id
         dates = list(Article.objects.all().values_list("published_at",flat=True))
         
-        for i in dates: dates_list.append(f"{calendar.month_name[i.month]} {i.year}")
-        # data["dates"] = dates_list
+        for i in dates:
+            date = f"{calendar.month_name[i.month]} {i.year}"
+            if date not in dates_list:
+                dates_list.append(f"{calendar.month_name[i.month]} {i.year}")
+
         data["dates"] = dates_list
         return data
 class TagDetailView(DetailView):
@@ -35,7 +38,7 @@ def search_view(request, *args, **kwargs):
     if request.method == 'POST':
         articles = Article.objects.filter(content__contains=request.POST["search"])
 
-    return render(request, 'search/search.html', {'title': 'نتايج البحث', 'articles': articles})
+    return render(request, 'search/search.html', {'title': request.POST["search"], 'articles': articles})
 
 def archive_view(request, *args, **kwargs):
 
