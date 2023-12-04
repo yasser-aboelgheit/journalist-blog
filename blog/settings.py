@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'publisher',
     'podcast',
     'blogs',
-    'about_me'
+    'about_me',
+    'prizes'
 ]
 
 MIDDLEWARE = [

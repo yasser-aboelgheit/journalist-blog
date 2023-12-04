@@ -81,25 +81,27 @@
 				</section>
 
 			<!-- Four -->
-				<section id="four" class="wrapper style1 special fade-up">
+				<section id="four" class="wrapper style1 special fade-up" style="color:white">
 					<div class="container">
 						<header class="major">
 							<h2>الجوائز</h2>
 							<!-- <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p> -->
 						</header>
 						<div class="box alt">
-							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-chart-area"></span>
-									<h3>Ipsum sed commodo</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
+							<div class="row">
+								{% for prize in prizes %}
+								<div class="col-4 col-6-medium col-12-xsmall">
+									<span class="image fit"><img src="{{prize.image.url}}"/></span>
+									<h3>{{ prize.title }}</h3>
+									<p>{{ prize.snippet }}</p>
+								</div>
+								{% endfor %}
+								<!-- <section class="col-4 col-6-medium col-12-xsmall">
 									<span class="icon solid alt major fa-comment"></span>
 									<h3>Eleifend lorem ornare</h3>
 									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
+								</section> -->
+								<!-- <section class="col-4 col-6-medium col-12-xsmall">
 									<span class="icon solid alt major fa-flask"></span>
 									<h3>Cubilia cep lobortis</h3>
 									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
@@ -118,7 +120,7 @@
 									<span class="icon solid alt major fa-lock"></span>
 									<h3>Massa arcu accumsan</h3>
 									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
+								</section> -->
 							</div>
 						</div>
 						<!-- <footer class="major">
@@ -147,7 +149,7 @@
 
 
 			<!-- Two -->
-			<section id="four" class="spotlight style2 right" dir="rtl">
+			<section id="four" class="spotlight style2 right" dir="rtl" style="color:white">
 				<span class="image fit main"><img src="{{pictures.image_section_four.url}}"alt="" /></span>
 				<div class="content">
 					<header>
@@ -168,7 +170,7 @@
 				<a href="#five" class="goto-next scrolly">Next</a>
 			</section>
 	
-			<section id="five" class="spotlight style3 left" dir="rtl">
+			<section id="five" class="spotlight style3 left" dir="rtl" style="color:white">
 				<span class="image fit main"><img src="{{pictures.image_section_five.url}}"alt="" /></span>
 				<div class="content">
 					<header>
