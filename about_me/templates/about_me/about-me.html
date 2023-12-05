@@ -2,6 +2,21 @@
 {% load static %}
 {% block content %}
 
+<style>
+	#banner {
+	  background-image: url({{pictures.main_image_big.url}});
+	}
+	
+	/* On screens that are 992px wide or less, the background color is blue */
+	@media screen and (max-width: 736px) {
+		#banner {
+			background-image: url({{pictures.main_image_small.url}});
+	  }
+	}
+	
+	</style>
+
+
 			<!-- Banner -->
 				<section id="banner">
 					<div class="content">

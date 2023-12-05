@@ -3,7 +3,8 @@ from solo.models import SingletonModel
 
 
 class AboutMePage(SingletonModel):
-    wide_image = models.ImageField(null=True, blank=True, upload_to="images/about")
+    main_image_big = models.ImageField(null=True, blank=True, upload_to="images/about")
+    main_image_small = models.ImageField(null=True, blank=True, upload_to="images/about")
     image_section_one = models.ImageField(null=True, blank=True, upload_to="images/about")
     image_section_two = models.ImageField(null=True, blank=True, upload_to="images/about")
     image_section_three = models.ImageField(null=True, blank=True, upload_to="images/about")
