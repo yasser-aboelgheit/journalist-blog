@@ -2,6 +2,18 @@
 {% load static %}
 {% block content %}
 <!-- Banner -->
+<style>
+	#banner {
+	  background-image: url("{% static 'images/20aa591e-421e-4c0c-9ef4-eecffc5924af.jpeg' %}");
+	}
+	
+    @media screen and (max-width: 736px) {
+		#banner {
+			background-image: url({{mobile_pic.first_section_pic.url}});
+	  }
+	}
+
+	</style>
 <section id="banner">
  <!-- style="background-image: url('images/mohamed2.jpg')"> -->
     <!-- url('images/rsz_1mohamed2.jpg')" -->

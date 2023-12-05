@@ -5,7 +5,7 @@ from articles.models import Article, ArticleTypeChoices
 from .models import Tags
 import calendar
 from datetime import datetime
-
+from home.models import FirstSection
 
 class HomePageView(TemplateView):
     template_name = 'home/home.html'
@@ -24,6 +24,7 @@ class HomePageView(TemplateView):
                 dates_list.append(f"{calendar.month_name[i.month]} {i.year}")
 
         data["dates"] = dates_list
+        data['mobile_pic'] = FirstSection.objects.first()
         return data
 class TagDetailView(DetailView):
     model = Tags
