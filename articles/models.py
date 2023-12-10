@@ -1,6 +1,5 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from home.models import Tags
 from base.models import BaseModel
 
 class ArticleTypeChoices(models.TextChoices):
@@ -17,8 +16,8 @@ class Article(BaseModel):
     type = models.CharField('type of article', max_length=3,
                              choices=ArticleTypeChoices.choices, default=0
     )
-    image = models.ImageField(null=True, blank=True, upload_to="images/articles")
-    snippet = models.TextField(null=True, blank=True)
+    image = models.ImageField(null=True, upload_to="images/articles")
+    snippet = models.TextField(null=True,)
     content = RichTextUploadingField()
     show_on_home_page = models.BooleanField(default=False)
 

@@ -26,10 +26,10 @@ class BaseModel(models.Model):
 
     published_on = models.ForeignKey(Publisher,
                                      null=True,
-                                     blank=True, on_delete=models.deletion.DO_NOTHING)
+                                     on_delete=models.deletion.DO_NOTHING)
     tag = models.ManyToManyField(Tags, blank=True)
-    published_at = models.DateField(null=True, blank=True)
-    source_link = models.URLField(null=True, blank=True)
+    published_at = models.DateField(null=True,)
+    source_link = models.URLField(null=True,)
     number_of_visits = models.IntegerField(default=0)
 
     def __str__(self):
