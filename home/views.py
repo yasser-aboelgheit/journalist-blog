@@ -6,6 +6,8 @@ from .models import Tags
 import calendar
 from datetime import datetime
 from home.models import FirstSection
+from django.db.models import Q
+
 
 class HomePageView(TemplateView):
     template_name = 'home/home.html'
@@ -36,10 +38,11 @@ class TagDetailView(DetailView):
         return data
 
 def search_view(request, *args, **kwargs):
+    search_key_word = request.POST["search"]
     if request.method == 'POST':
-        articles = Article.objects.filter(content__contains=request.POST["search"])
+        articles = Article.objects.filter(Q(content__contains=search_key_word) | Q(title__contains=search_key_word))
 
-    return render(request, 'search/search.html', {'title': request.POST["search"], 'articles': articles})
+    return render(request, 'search/search.html', {'title': search_key_word, 'articles': articles})
 
 def archive_view(request, *args, **kwargs):
 
