@@ -57,6 +57,18 @@
 					'<nav>' +
 						$('#nav').navList() +
 					'</nav>' +
+					`<div class="container">
+						<header>
+								<h2البحث</h2>
+						</header>
+						<form method="post" action="/search/" class="cta" dir="rtl">
+								{% csrf_token %}
+								<div class="row gtr-uniform gtr-50">
+										<div class="col-8 col-12-xsmall"><input type="text" name="search" id="email" placeholder="البحث.." class="search-input-panel" /></div>
+										<div class="col-4 col-12-xsmall"><input type="submit" value="بحث" class="fit primary" /></div>
+								</div>
+						</form>
+					</div>` +
 				'</div>'
 			)
 				.appendTo($body)

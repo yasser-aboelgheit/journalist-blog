@@ -63,12 +63,22 @@
 							<!-- <li><a href="#">مقابلات</a></li> -->
 							<li><a href="{% url 'about_me' %}" class="special_text">من أنا</a></li>
 							<li>
-								<div class="search-container" style="display: block;">
+								<!-- <div class="search-container" style="display: block;">
 									<form action="{% url 'search_view' %}"  method="POST">
 										{% csrf_token %}
 									  <input type="text" placeholder="Search.." name="search" style="display: block;">
 									  <button type="submit" style="display: block;"><i class="fa fa-search" style="display: block;"></i></button>
 									</form>
+								</div> -->
+
+							<form action="{% url 'search_view' %}"  method="POST">
+								{% csrf_token %}
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-8 col-12-xsmall"><input type="text" name="search" id="email" placeholder="البحث.." class="search-input special_text" /></div>
+									<div class="col-4 col-12-xsmall" style="padding-top: 1em !important;"><input type="submit" value="بحث" class="fit primary search-input-button special_text" /></div>
+								</div>
+							</form>
+
 							</li>
 						</ul>
 					</nav>
