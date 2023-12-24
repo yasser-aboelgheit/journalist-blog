@@ -4130,3 +4130,43 @@ input, select, textarea {
 					}
 
 	}
+
+.search-input-button {
+	background-color: black !important;
+}
+
+.search-input {
+	background-color: transparent !important;
+	color: black !important;
+	border: 1px solid black !important;
+}
+
+.search-input-panel {
+	color: white !important;
+}
+
+.search-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color:    black !important;
+}
+
+ .search-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:    black !important;
+ opacity:  1 !important;
+}
+
+.search-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    black !important;
+ opacity:  1 !important;
+}
+
+.search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:    black !important;
+}
+
+.search-input::-ms-input-placeholder { /* Microsoft Edge */
+ color:    black !important;
+}
+
+.search-input::placeholder { /* Most modern browsers support this now. */
+ color:    black !important;
+}
