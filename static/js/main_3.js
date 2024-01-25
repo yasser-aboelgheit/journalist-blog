@@ -61,7 +61,7 @@
 				var csrfToken = getCSRFToken();
 		// Panel.
 			$(
-				'<div id="navPanel">' +
+				'<li><div id="navPanel">' +
 					'<nav>' +
 						$('#nav').navList() +
 					'</nav>' +
@@ -78,7 +78,7 @@
 								</div>
 						</form>
 					</div>` +
-				'</div>'
+				'</div></li>'
 			)
 				.appendTo($body)
 				.panel({

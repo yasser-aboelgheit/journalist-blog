@@ -5,7 +5,7 @@ from articles.models import Article, ArticleTypeChoices
 from .models import Tags
 import calendar
 from datetime import datetime
-from home.models import FirstSection
+from home.models import FirstSection, SecondSection
 from django.db.models import Q
 
 
@@ -27,6 +27,7 @@ class HomePageView(TemplateView):
 
         data["dates"] = dates_list
         data['mobile_pic'] = FirstSection.objects.first()
+        data['prize_section'] = SecondSection.objects.first()
         return data
 class TagDetailView(DetailView):
     model = Tags
