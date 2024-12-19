@@ -180,7 +180,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'NAME': BASE_DIR / "backup/db.sqlite3",
     }
 }
 AWS_ACCESS_KEY_ID = 'AKIAY242ZRSKSLVVD57V '
